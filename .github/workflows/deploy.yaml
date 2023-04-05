@@ -1,0 +1,52 @@
+name: Deploy
+on:
+  push:
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+# Prevents concurrent deployments
+concurrency: production_environment
+
+jobs:
+  prod:
+    if: ${{ github.actor != 'renovate[bot]' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://yolo.shrugify.com
+    env:
+      APP_ENV: prod
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # Prepare environment
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          tools: composer:v2
+          coverage: none
+
+      # Install dependencies
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v2
+        with:
+          composer-options: --no-dev --optimize-autoloader
+
+      # Deploy to production
+      - name: Deploy
+        uses: deployphp/action@v1
+        env:
+          LANG: en_US.UTF-8
+          LANGUAGE: en_US.UTF-8
+          LC_CTYPE: en_US.UTF-8
+          LC_ALL: en_US.UTF-8
+        with:
+          private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+          dep: deploy production
+          deployer-version: '7.3.0'
