@@ -32,6 +32,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 final readonly class MessageController
 {
+
     public function __construct(private MessageRepository $messageRepository)
     {
     }

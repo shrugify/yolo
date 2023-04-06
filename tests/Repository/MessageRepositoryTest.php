@@ -55,6 +55,8 @@ final class MessageRepositoryTest extends TestCase
                 MessageSource::LocalFile->value,
             ),
         );
+
+        // @todo: expect excpetion
         self::assertNotEmpty($localMessage);
 
         $localMessage = $this->messageRepository->getRandomMessage(MessageSource::WhatTheCommit);

@@ -4,6 +4,7 @@ use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\Filesystem\Filesystem;
 
 require dirname(__DIR__).'/vendor/autoload.php';
+DG\BypassFinals::enable();
 
 if (file_exists(dirname(__DIR__).'/config/bootstrap.php')) {
     require dirname(__DIR__).'/config/bootstrap.php';
