@@ -44,7 +44,7 @@ final class MessageControllerTest extends WebTestCase
     #[Test]
     public function messageActionReturnsContent(): void
     {
-        $crawler = $this->client->request('GET', '/m.txt');
+        $crawler = $this->client->request('GET', '/message.txt');
         self::assertResponseIsSuccessful();
     }
 

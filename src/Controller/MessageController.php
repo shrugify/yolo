@@ -37,7 +37,7 @@ final readonly class MessageController
     {
     }
 
-    #[Route(path: '/m.txt')]
+    #[Route(path: '/message.txt')]
     public function messageAction(): Response
     {
         try {
