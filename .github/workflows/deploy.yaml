@@ -49,4 +49,4 @@ jobs:
           private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
           dep: deploy production
-          deployer-version: '7.3.0'
+          deployer-version: '7.3.1'
