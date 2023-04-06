@@ -1,6 +1,6 @@
 <div align="center">
 
-[![CGL](https://github.com/shrugify/zealous-stan/actions/workflows/cgl.yaml/badge.svg)](https://github.com/shrugify/zealous-stan/actions/workflows/cgl.yaml)
+[![CGL](https://github.com/shrugify/yolo/actions/workflows/cgl.yaml/badge.svg)](https://github.com/shrugify/yolo/actions/workflows/cgl.yaml)
 [![codecov](https://codecov.io/gh/shrugify/yolo/branch/main/graph/badge.svg?token=5FYSOP5ZUZ)](https://codecov.io/gh/shrugify/yolo)
 
 #  Shrugify 🤷 Yolo
@@ -30,8 +30,8 @@ This package deploys a random commit message generator to [yolo.shrugify.com](ht
 
 
 ## 💛 Acknowledgement
-This package massively inspired by one of my favorite projects: [whatthecommit.com](https://whatthecommit.com)
-Thanks to [@ngerakines](https://github.com/ngerakines) the many other contributors of [`ngerakines/commitment`](https://github.com/ngerakines/commitment).
+This package is inspired by one of my favorite projects: [whatthecommit.com](https://whatthecommit.com)
+Thanks to [@ngerakines](https://github.com/ngerakines) and the many other contributors of [`ngerakines/commitment`](https://github.com/ngerakines/commitment).
 
 ## ⭐ License
 This project is licensed under [GNU General Public License 3.0 (or later)](LICENSE).
