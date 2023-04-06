@@ -1,18 +1,28 @@
+And if thou'rt unwilling, then force I'll employ
 Because reasons
 Because why not?
+Careful! It might open the gates to hell.
 Changed everything because I'm bored
-Changed variable names to be more confusing
-Code that will make you question your career choices
-Committing in the hopes that this will fix everything
-Committing my code. Don't judge me
+Clean up on aisle five
+Definitely not the final solution
+Don't judge me
+Don't tell Dave
+Hoping this will fix everything
 I can't believe this actually works
 I have no idea what I'm doing
+It is what it is
+Let the games begin
 Made a change. Pray for me
 Minor changes that no one will notice
+Move along there's nothing to see here
 Never heard of Composer?
+Probably a terrible idea but here goes nothing
 Refactored to make it worse
 Removed all the code that wasn't working
-Removed unused code. Finally!
+Removed unused code.
 This commit will probably break everything
-This is definitely not the final solution
-This is probably a terrible idea but here goes nothing
+This could never have worked before
+This makes you question your career choices
+Update packages
+[WIP]
+¯\_(ツ)_/¯

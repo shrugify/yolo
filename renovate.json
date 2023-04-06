@@ -31,11 +31,6 @@
 	"packageRules": [
 		{
 			"matchDepTypes": [
-				"require"
-			]
-		},
-		{
-			"matchDepTypes": [
 				"devDependencies"
 			],
 			"matchUpdateTypes": [
