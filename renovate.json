@@ -54,6 +54,18 @@
 	],
 	"platformAutomerge": true,
 	"rangeStrategy": "update-lockfile",
+	"regexManagers": [
+		{
+			"fileMatch": [
+				"^\\.github/workflows/deploy\\.yaml$"
+			],
+			"matchStrings": [
+				"deployer-version: '(?<currentValue>[^']+)'"
+			],
+			"datasourceTemplate": "packagist",
+			"depNameTemplate": "deployer/deployer"
+		}
+	],
 	"separateMinorPatch": true,
 	"timezone": "Europe/Berlin",
 	"vulnerabilityAlerts": {
