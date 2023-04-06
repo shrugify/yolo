@@ -1,23 +1,37 @@
 <div align="center">
 
-[![CGL](https://github.com/shrugify/yolo/actions/workflows/cgl.yaml/badge.svg)](https://github.com/shrugify/yolo/actions/workflows/cgl.yaml)
+[![CGL](https://github.com/shrugify/zealous-stan/actions/workflows/cgl.yaml/badge.svg)](https://github.com/shrugify/zealous-stan/actions/workflows/cgl.yaml)
+[![codecov](https://codecov.io/gh/shrugify/yolo/branch/main/graph/badge.svg?token=5FYSOP5ZUZ)](https://codecov.io/gh/shrugify/yolo)
 
 #  Shrugify 🤷 Yolo
 </div>
 
-Massively inspired by one of my favorite projects [whatthecommit.com](https://github.com/ngerakines/commitment) ([@ngerakines](https://github.com/ngerakines)
- and many others) `shrugify/yolo` come up with commit messages. So you don't have to.
+This package deploys a random commit message generator to [yolo.shrugify.com](https://yolo.shrugify.com).
 
 ## ⚡ Usage
 
-Require this package and make sure to configure PHPStan according to your needs by putting a configuration file in your project
-(e.g. as `phpstan.neon` file in your package root.)
+1. Visit [yolo.shrugify.com](https://yolo.shrugify.com) to get a random commit message.
+2. Retrieve and apply a plain text commit message from the shell:
+    ```bash
+    git commit -m "$(curl -s https://yolo.shrugify.com/message.txt)"
+    ```
+3. Pro tip! Create an alias:
+    ```bash
+    git config --global alias.yolo '!git commit -m "$(curl -s https://yolo.shrugify.com/message.txt)"'
+    ```
+4. Bonus! Get the original `What The Commit` messages.
+    ```bash
+    git commit -m "$(curl -s https://yolo.shrugify.com/whatthecommit.txt)"
+    ```
 
-```bash
-git commit -m "$(curl -s https://yolo.shrugify.com/m.txt)"
-```
 
-## Commit Sources
+
+
+
+
+## 💛 Acknowledgement
+This package massively inspired by one of my favorite projects: [whatthecommit.com](https://whatthecommit.com)
+Thanks to [@ngerakines](https://github.com/ngerakines) the many other contributors of [`ngerakines/commitment`](https://github.com/ngerakines/commitment).
 
 ## ⭐ License
 This project is licensed under [GNU General Public License 3.0 (or later)](LICENSE).
