@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        {% block meta %}
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="description" content="Helping you find the right word for your commits.">
+        {% endblock %}
+        {% block favicon %}
+            <link rel="icon" type="image/svg+xml" href="{{ asset('assets/images/code-branch-solid.svg') }}">
+        {% endblock %}
+        <link rel="stylesheet" href="{{ asset('assets/style/pico.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/style/custom.css') }}">
+        <title>{% block title %}Git Yolo!{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+
+        {#
+            {% include 'partials/nav.html.twig' %}
+        #}
+
+        <main class="container">
+            {% block body %}{% endblock %}
+        </main>
+
+        {#
+            {% if routes is defined %}
+                {% include 'partials/footer.html.twig' with { routes } %}
+            {% endif %}
+        #}
+
+    </body>
+</html>

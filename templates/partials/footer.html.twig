@@ -1,0 +1,15 @@
+<footer>
+    <nav>
+        {% block routes %}
+            <ul></ul>
+            <ul>
+                {% for route in routes %}
+                    <li>{{ route.path }}</li>
+                {% endfor %}
+                <li>
+                    Impressum
+                </li>
+            </ul>
+        {% endblock %}
+    </nav>
+</footer>

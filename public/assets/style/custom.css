@@ -1,0 +1,51 @@
+code.typing {
+    font-family:
+        "JetBrains Mono",
+        "Menlo",
+        "Consolas",
+        "Roboto Mono",
+        monospace;
+    animation:
+        /** @todo: steps need to be determined dynamically based on content.length **/
+        typewrite 3.5s steps(40, end) forwards,
+        caret .75s step-end infinite;
+    border-radius: 0;
+    border-right: .4rem solid #fff;
+    color: #fff;
+    letter-spacing: .15em;
+    overflow: hidden;
+    padding: 0 .5em 0 0;
+    white-space: nowrap;
+}
+
+code.typing::before {
+    content: '$ ';
+}
+@font-face {
+    font-family: "JetBrains Mono", monospace;
+    src: url("../fonts/jbm-reg.woff2") format("woff2");
+}
+@keyframes typewrite {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes caret {
+    from, to { border-color: transparent }
+    50% { border-color: #fff; }
+}
+
+pre {
+    margin: 0;
+    padding: 2rem;
+    max-width: 100%;
+    /** @todo: implement proper overflow handling **/
+    overflow: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.shell-wrapper {
+    background: var(--code-background-color);
+}
