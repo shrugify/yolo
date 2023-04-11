@@ -1,78 +1,12 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
-		":automergeRequireAllStatusChecks",
-		":combinePatchMinorReleases",
-		":enableVulnerabilityAlerts",
-		":label(dependencies)",
-		":rebaseStalePrs",
-		":semanticCommitsDisabled",
-		":separateMajorReleases",
-		":widenPeerDependencies",
-		"group:recommended"
+		"github>mteu/renovate-configuration"
 	],
-	"assignAutomerge": true,
-	"baseBranches": [
-		"main"
+	"assignees": [
+		"mteu"
 	],
-	"commitBodyTable": true,
-	"commitMessagePrefix": "[TASK]",
-	"commitMessageTopic": "{{depName}}",
-	"configMigration": true,
-	"labels": [
-		"dependencies"
-	],
-	"lockFileMaintenance": {
-		"enabled": true,
-		"commitMessageAction": "Update composer.lock",
-		"recreateClosed": true
-	},
-	"ignoreUnstable": false,
-	"packageRules": [
-		{
-			"matchDepTypes": [
-				"devDependencies"
-			],
-			"matchUpdateTypes": [
-				"minor",
-				"patch",
-				"pin",
-				"digest"
-			],
-			"automerge": true
-		},
-		{
-			"matchPackageNames": [
-				"php"
-			],
-			"allowedVersions": "~8.2",
-			"extends": [
-				":automergeDisabled"
-			],
-			"ignoreUnstable": false
-		}
-	],
-	"platformAutomerge": true,
-	"rangeStrategy": "update-lockfile",
-	"regexManagers": [
-		{
-			"fileMatch": [
-				"^\\.github/workflows/deploy\\.yaml$"
-			],
-			"matchStrings": [
-				"deployer-version: '(?<currentValue>[^']+)'"
-			],
-			"datasourceTemplate": "packagist",
-			"depNameTemplate": "deployer/deployer"
-		}
-	],
-	"separateMinorPatch": true,
-	"timezone": "Europe/Berlin",
-	"vulnerabilityAlerts": {
-		"extends": [
-			":automergeDisabled",
-			":automergePr"
-		],
-		"rangeStrategy": "replace"
-	}
+	"reviewers": [
+		"mteu"
+	]
 }
