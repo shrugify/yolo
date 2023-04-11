@@ -9973,16 +9973,16 @@
         },
         {
             "name": "shrug/zealous-stan",
-            "version": "0.2.6",
+            "version": "0.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shrugify/zealous-stan.git",
-                "reference": "3bdbd1a770ae0b5b7f33bd372b52bdf9c6a8a368"
+                "reference": "773926d55029ddd2f83ec7ae09eda19d2fa16009"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shrugify/zealous-stan/zipball/3bdbd1a770ae0b5b7f33bd372b52bdf9c6a8a368",
-                "reference": "3bdbd1a770ae0b5b7f33bd372b52bdf9c6a8a368",
+                "url": "https://api.github.com/repos/shrugify/zealous-stan/zipball/773926d55029ddd2f83ec7ae09eda19d2fa16009",
+                "reference": "773926d55029ddd2f83ec7ae09eda19d2fa16009",
                 "shasum": ""
             },
             "require": {
@@ -10027,9 +10027,9 @@
             "description": "A modest and highly subjective collection of commonly used phpstan rules",
             "support": {
                 "issues": "https://github.com/shrugify/zealous-stan/issues",
-                "source": "https://github.com/shrugify/zealous-stan/tree/0.2.6"
+                "source": "https://github.com/shrugify/zealous-stan/tree/0.2.7"
             },
-            "time": "2023-03-20T08:50:12+00:00"
+            "time": "2023-04-11T08:48:49+00:00"
         },
         {
             "name": "spaze/phpstan-disallowed-calls",
