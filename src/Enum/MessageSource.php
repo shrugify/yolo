@@ -23,6 +23,7 @@ namespace App\Enum;
 
 enum MessageSource: string
 {
+    case Mixed = 'mixed';
     case LocalFile = '/data/messages.txt';
     case Undefined = '¯\_(ツ)_/¯';
     case WhatTheCommit = 'https://raw.githubusercontent.com/ngerakines/commitment/main/commit_messages.txt';

@@ -32,9 +32,10 @@ final class MessageRepository
     /**
      * @throws CouldNotReadFromFileException
      */
-    public function getRandomMessage(?MessageSource $source): string
+    public function getRandomMessageBySource(?MessageSource $source): string
     {
         return match ($source) {
+            MessageSource::Mixed => $this->getRandomMessageFromVariousSources(),
             MessageSource::LocalFile => $this->getRandomMessageFromFile(
                 $this->getPathToLocalFile(MessageSource::LocalFile->value),
             ),
@@ -92,5 +93,28 @@ final class MessageRepository
         }
 
         return $prefixMessage ? $prefix[$randomizer->getInt(0, count($prefix) - 1)] . $array[$randomizer->getInt(0, count($array) - 1)] :  $array[$randomizer->getInt(0, count($array) - 1)];
+    }
+
+    /**
+     * @throws CouldNotReadFromFileException
+     */
+    private function getRandomMessageFromVariousSources(): string
+    {
+
+        $source = [
+            MessageSource::LocalFile,
+            MessageSource::WhatTheCommit,
+        ];
+
+        $randomizer = new Randomizer();
+
+        return $this->getRandomMessageBySource(
+            $source[
+                $randomizer->getInt(
+                    0,
+                    count($source) - 1,
+                )
+            ],
+        );
     }
 }

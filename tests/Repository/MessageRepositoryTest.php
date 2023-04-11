@@ -46,10 +46,10 @@ final class MessageRepositoryTest extends TestCase
     {
         self::assertSame(
             MessageSource::Undefined->value,
-            $this->messageRepository->getRandomMessage(null),
+            $this->messageRepository->getRandomMessageBySource(null),
         );
 
-        $localMessage = $this->messageRepository->getRandomMessage(MessageSource::LocalFile);
+        $localMessage = $this->messageRepository->getRandomMessageBySource(MessageSource::LocalFile);
         self::assertFileExists(
             $this->messageRepository->getPathToLocalFile(
                 MessageSource::LocalFile->value,
@@ -59,7 +59,7 @@ final class MessageRepositoryTest extends TestCase
         // @todo: expect excpetion
         self::assertNotEmpty($localMessage);
 
-        $localMessage = $this->messageRepository->getRandomMessage(MessageSource::WhatTheCommit);
+        $localMessage = $this->messageRepository->getRandomMessageBySource(MessageSource::WhatTheCommit);
         self::assertNotEmpty($localMessage);
     }
 }

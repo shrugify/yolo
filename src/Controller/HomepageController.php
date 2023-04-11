@@ -56,7 +56,7 @@ final readonly class HomepageController
             $this->twig->render(
                 'homepage.html.twig',
                 [
-                    'message' => $this->messageRepository->getRandomMessage(MessageSource::LocalFile),
+                    'message' => $this->messageRepository->getRandomMessageBySource(MessageSource::Mixed),
                     'routes' => $this->getRoutes(),
                 ],
             ),

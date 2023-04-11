@@ -41,7 +41,7 @@ final readonly class WhatTheCommitController
     {
         try {
             return JsonResponse::fromJsonString(
-                $this->messageRepository->getRandomMessage(
+                $this->messageRepository->getRandomMessageBySource(
                     MessageSource::WhatTheCommit,
                 ),
             );

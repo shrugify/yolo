@@ -42,8 +42,8 @@ final readonly class MessageController
     {
         try {
             return JsonResponse::fromJsonString(
-                $this->messageRepository->getRandomMessage(
-                    MessageSource::LocalFile,
+                $this->messageRepository->getRandomMessageBySource(
+                    MessageSource::Mixed,
                 ),
             );
         } catch (CouldNotReadFromFileException $e) {
