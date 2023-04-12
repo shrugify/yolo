@@ -43,9 +43,11 @@ final class MessageRepository
                 ),
                 default => MessageSource::Undefined->value,
             };
+            // @codeCoverageIgnoreStart
         } catch (CouldNotReadFromFileException $e) {
             return MessageSource::Undefined->value;
         }
+        // @codeCoverageIgnoreEnd
     }
 
     public function getPathToLocalFile(string $relativePath): string
