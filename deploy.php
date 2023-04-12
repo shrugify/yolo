@@ -25,7 +25,7 @@ require 'recipe/common.php';
 require 'contrib/rsync.php';
 
 set('application', 'yolo');
-set('keep_releases', 3);
+// set('keep_releases', 3);
 
 set('rsync_src', __DIR__);
 set('rsync', [
