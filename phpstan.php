@@ -60,7 +60,7 @@ foreach ($configuration['parameters']['ignoreErrors'] as $baselineIgnore) {
 
 $configuration['parameters']['ignoreErrors'] = array_unique($ignoreErrors);
 
-$configuration['parameters']['shrug'] = [
+$configuration['parameters']['docblock'] = [
     'copyrightIdentifier' => 'Copyright (C) 2023',
     'requiredLicenseIdentifier' => 'GPL-3.0',
 ];
