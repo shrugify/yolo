@@ -21,6 +21,11 @@ code.typing {
 code.typing::before {
     content: '$ ';
 }
+
+.clipboardBtn:hover {
+    cursor: pointer;
+}
+
 @font-face {
     font-family: "JetBrains Mono", monospace;
     src: url("../fonts/jbm-reg.woff2") format("woff2");

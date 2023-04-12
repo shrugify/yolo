@@ -12,13 +12,6 @@
         <link rel="stylesheet" href="{{ asset('assets/style/pico.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/style/custom.css') }}">
         <title>{% block title %}Git Yolo!{% endblock %}</title>
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
     </head>
     <body>
 
@@ -33,6 +26,6 @@
                 {% include 'partials/footer.html.twig' with { routes } %}
             {% endif %}
         #}
-
+        <script src="{{ asset('assets/javascript/copy.js') }}"></script>
     </body>
 </html>
