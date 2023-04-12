@@ -47,7 +47,6 @@ final readonly class HomepageController
      * @throws SyntaxError
      * @throws RuntimeError
      * @throws LoaderError
-     * @throws CouldNotReadFromFileException
      */
     #[Route(path: '/')]
     public function homepageAction(): Response

@@ -46,21 +46,4 @@ final class WhatTheCommitControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', '/whatthecommit.txt');
         self::assertResponseIsSuccessful();
     }
-
-    /**
-     * @throws \PHPUnit\Framework\MockObject\Exception
-     */
-    #[Test]
-    public function whatTheCommitActionReturnsDefaultAfterExceptionIsCaught(): void
-    {
-        /** @phpstan-ignore-next-line */
-        $mockRepo = $this->createMock(MessageRepository::class);
-        $mockRepo->method('getRandomMessageBySource')
-            ->willThrowException(new CouldNotReadFromFileException());
-
-        $controller = new \App\Controller\WhatTheCommitController($mockRepo);
-        $response = $controller->whatTheCommitAction();
-
-        self::assertEquals(MessageSource::Undefined->value, $response->getContent());
-    }
 }

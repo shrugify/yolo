@@ -47,21 +47,4 @@ final class MessageControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', '/message.txt');
         self::assertResponseIsSuccessful();
     }
-
-    /**
-     * @throws \PHPUnit\Framework\MockObject\Exception
-     */
-    #[Test]
-    public function messageActionReturnsDefaultAfterExceptionIsCaught(): void
-    {
-        /** @phpstan-ignore-next-line */
-        $mockRepo = $this->createMock(MessageRepository::class);
-        $mockRepo->method('getRandomMessageBySource')
-            ->willThrowException(new CouldNotReadFromFileException());
-
-        $controller = new \App\Controller\MessageController($mockRepo);
-        $response = $controller->messageAction();
-
-        self::assertEquals(MessageSource::Undefined->value, $response->getContent());
-    }
 }

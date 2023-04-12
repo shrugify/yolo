@@ -29,22 +29,23 @@ final class MessageRepository
 {
     const LEVELS_TO_ROOT = 2;
 
-    /**
-     * @throws CouldNotReadFromFileException
-     */
     public function getRandomMessageBySource(?MessageSource $source): string
     {
-        return match ($source) {
-            MessageSource::Mixed => $this->getRandomMessageFromVariousSources(),
-            MessageSource::LocalFile => $this->getRandomMessageFromFile(
-                $this->getPathToLocalFile(MessageSource::LocalFile->value),
-            ),
-            MessageSource::WhatTheCommit => $this->getRandomMessageFromFile(
-                $source->value,
-                false,
-            ),
-            default => MessageSource::Undefined->value,
-        };
+        try {
+            return match ($source) {
+                MessageSource::Mixed => $this->getRandomMessageFromVariousSources(),
+                MessageSource::LocalFile => $this->getRandomMessageFromFile(
+                    $this->getPathToLocalFile(MessageSource::LocalFile->value),
+                ),
+                MessageSource::WhatTheCommit => $this->getRandomMessageFromFile(
+                    $source->value,
+                    false,
+                ),
+                default => MessageSource::Undefined->value,
+            };
+        } catch (CouldNotReadFromFileException) {
+            return MessageSource::Undefined->value;
+        }
     }
 
     public function getPathToLocalFile(string $relativePath): string
@@ -98,7 +99,7 @@ final class MessageRepository
     /**
      * @throws CouldNotReadFromFileException
      */
-    private function getRandomMessageFromVariousSources(): string
+    public function getRandomMessageFromVariousSources(): string
     {
 
         $source = [

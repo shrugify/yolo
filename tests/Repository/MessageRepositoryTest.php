@@ -38,11 +38,8 @@ final class MessageRepositoryTest extends TestCase
         $this->messageRepository = new MessageRepository();
     }
 
-    /**
-     * @throws CouldNotReadFromFileException
-     */
     #[Test]
-    public function testGetRandomMessage(): void
+    public function getRandomMessageFromSourceReturnsContent(): void
     {
         self::assertSame(
             MessageSource::Undefined->value,
