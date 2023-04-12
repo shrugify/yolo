@@ -47,7 +47,6 @@ final readonly class HomepageController
      * @throws SyntaxError
      * @throws RuntimeError
      * @throws LoaderError
-     * @throws CouldNotReadFromFileException
      */
     #[Route(path: '/')]
     public function homepageAction(): Response
@@ -56,7 +55,7 @@ final readonly class HomepageController
             $this->twig->render(
                 'homepage.html.twig',
                 [
-                    'message' => $this->messageRepository->getRandomMessage(MessageSource::LocalFile),
+                    'message' => $this->messageRepository->getRandomMessageBySource(MessageSource::Mixed),
                     'routes' => $this->getRoutes(),
                 ],
             ),

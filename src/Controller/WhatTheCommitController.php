@@ -39,16 +39,10 @@ final readonly class WhatTheCommitController
     #[Route(path: '/whatthecommit.txt')]
     public function whatTheCommitAction(): Response
     {
-        try {
-            return JsonResponse::fromJsonString(
-                $this->messageRepository->getRandomMessage(
-                    MessageSource::WhatTheCommit,
-                ),
-            );
-        } catch (CouldNotReadFromFileException $e) {
-            return JsonResponse::fromJsonString(
-                MessageSource::Undefined->value,
-            );
-        }
+        return JsonResponse::fromJsonString(
+            $this->messageRepository->getRandomMessageBySource(
+                MessageSource::WhatTheCommit,
+            ),
+        );
     }
 }

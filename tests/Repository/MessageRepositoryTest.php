@@ -22,7 +22,6 @@
 namespace App\Tests\Repository;
 
 use App\Enum\MessageSource;
-use App\Exception\CouldNotReadFromFileException;
 use App\Repository\MessageRepository;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -38,28 +37,32 @@ final class MessageRepositoryTest extends TestCase
         $this->messageRepository = new MessageRepository();
     }
 
-    /**
-     * @throws CouldNotReadFromFileException
-     */
     #[Test]
-    public function testGetRandomMessage(): void
+    public function getRandomMessageFromSourceReturnsContent(): void
     {
         self::assertSame(
             MessageSource::Undefined->value,
-            $this->messageRepository->getRandomMessage(null),
+            $this->messageRepository->getRandomMessageBySource(null),
         );
 
-        $localMessage = $this->messageRepository->getRandomMessage(MessageSource::LocalFile);
+        $localMessage = $this->messageRepository->getRandomMessageBySource(MessageSource::LocalFile);
         self::assertFileExists(
             $this->messageRepository->getPathToLocalFile(
                 MessageSource::LocalFile->value,
             ),
         );
 
-        // @todo: expect excpetion
         self::assertNotEmpty($localMessage);
 
-        $localMessage = $this->messageRepository->getRandomMessage(MessageSource::WhatTheCommit);
+        $localMessage = $this->messageRepository->getRandomMessageBySource(MessageSource::WhatTheCommit);
         self::assertNotEmpty($localMessage);
+    }
+
+    #[Test]
+    public function getRandomMessageFromFileWillThrowException(): void
+    {
+        self::expectException(\App\Exception\CouldNotReadFromFileException::class);
+
+        $this->messageRepository->getRandomMessageFromFile('dummy.txt');
     }
 }

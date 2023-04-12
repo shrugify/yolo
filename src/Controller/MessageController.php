@@ -40,16 +40,10 @@ final readonly class MessageController
     #[Route(path: '/message.txt')]
     public function messageAction(): Response
     {
-        try {
-            return JsonResponse::fromJsonString(
-                $this->messageRepository->getRandomMessage(
-                    MessageSource::LocalFile,
-                ),
-            );
-        } catch (CouldNotReadFromFileException $e) {
-            return JsonResponse::fromJsonString(
-                MessageSource::Undefined->value,
-            );
-        }
+        return JsonResponse::fromJsonString(
+            $this->messageRepository->getRandomMessageBySource(
+                MessageSource::Mixed,
+            ),
+        );
     }
 }

@@ -19,12 +19,22 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace App\Enum;
+namespace App\Tests\Exception;
 
-enum MessageSource: string
+use App\Exception\CouldNotReadFromFileException;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\TestCase;
+
+final class CouldNotReadFromFileExceptionTest extends TestCase
 {
-    case Mixed = 'mixed';
-    case LocalFile = '/data/messages.txt';
-    case Undefined = '¯\_(ツ)_/¯';
-    case WhatTheCommit = 'https://raw.githubusercontent.com/ngerakines/commitment/main/commit_messages.txt';
+
+    #[Test]
+    public function createExceptionReturnsString(): void
+    {
+        self::assertSame(
+            'The contents of "dummy.txt" could not be read.',
+            CouldNotReadFromFileException::create('dummy.txt')->getMessage(),
+        );
+
+    }
 }

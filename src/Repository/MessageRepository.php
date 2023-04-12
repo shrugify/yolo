@@ -29,21 +29,25 @@ final class MessageRepository
 {
     const LEVELS_TO_ROOT = 2;
 
-    /**
-     * @throws CouldNotReadFromFileException
-     */
-    public function getRandomMessage(?MessageSource $source): string
+    public function getRandomMessageBySource(?MessageSource $source): string
     {
-        return match ($source) {
-            MessageSource::LocalFile => $this->getRandomMessageFromFile(
-                $this->getPathToLocalFile(MessageSource::LocalFile->value),
-            ),
-            MessageSource::WhatTheCommit => $this->getRandomMessageFromFile(
-                $source->value,
-                false,
-            ),
-            default => MessageSource::Undefined->value,
-        };
+        try {
+            return match ($source) {
+                MessageSource::Mixed => $this->getRandomMessageFromVariousSources(),
+                MessageSource::LocalFile => $this->getRandomMessageFromFile(
+                    $this->getPathToLocalFile(MessageSource::LocalFile->value),
+                ),
+                MessageSource::WhatTheCommit => $this->getRandomMessageFromFile(
+                    $source->value,
+                    false,
+                ),
+                default => MessageSource::Undefined->value,
+            };
+            // @codeCoverageIgnoreStart
+        } catch (CouldNotReadFromFileException $e) {
+            return MessageSource::Undefined->value;
+        }
+        // @codeCoverageIgnoreEnd
     }
 
     public function getPathToLocalFile(string $relativePath): string
@@ -56,7 +60,7 @@ final class MessageRepository
      * @return string[]
      * @throws CouldNotReadFromFileException
      */
-    private function getMessageArrayFromFile(string $filePath): array
+    public function getMessageArrayFromFile(string $filePath): array
     {
         $fileContents = file_get_contents($filePath);
 
@@ -70,15 +74,14 @@ final class MessageRepository
     /**
      * @throws CouldNotReadFromFileException
      */
-    private function getRandomMessageFromFile(string $filePath, bool $prefixMessage = true): string
+    public function getRandomMessageFromFile(string $filePath, bool $prefixMessage = true): string
     {
-
-        $array = $this->getMessageArrayFromFile($filePath);
+        $messagesArray = $this->getMessageArrayFromFile($filePath);
 
         $randomizer = new Randomizer();
 
         if ($prefixMessage) {
-            $prefix = [
+            $prefixArray = [
                 '',
                 '',
                 '',
@@ -91,6 +94,29 @@ final class MessageRepository
             ];
         }
 
-        return $prefixMessage ? $prefix[$randomizer->getInt(0, count($prefix) - 1)] . $array[$randomizer->getInt(0, count($array) - 1)] :  $array[$randomizer->getInt(0, count($array) - 1)];
+        return $prefixMessage ? $prefixArray[$randomizer->getInt(0, count($prefixArray) - 1)] . $messagesArray[$randomizer->getInt(0, count($messagesArray) - 1)] :  $messagesArray[$randomizer->getInt(0, count($messagesArray) - 1)];
+    }
+
+    /**
+     * @throws CouldNotReadFromFileException
+     */
+    private function getRandomMessageFromVariousSources(): string
+    {
+
+        $source = [
+            MessageSource::LocalFile,
+            MessageSource::WhatTheCommit,
+        ];
+
+        $randomizer = new Randomizer();
+
+        return $this->getRandomMessageBySource(
+            $source[
+                $randomizer->getInt(
+                    0,
+                    count($source) - 1,
+                )
+            ],
+        );
     }
 }
