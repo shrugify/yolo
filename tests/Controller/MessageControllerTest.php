@@ -21,11 +21,11 @@
 
 namespace App\Tests\Controller;
 
+use App\Controller\MessageController;
 use App\Enum\MessageSource;
 use App\Exception\CouldNotReadFromFileException;
 use App\Repository\MessageRepository;
 use DG\BypassFinals;
-use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
@@ -46,5 +46,27 @@ final class MessageControllerTest extends WebTestCase
     {
         $crawler = $this->client->request('GET', '/message.txt');
         self::assertResponseIsSuccessful();
+    }
+
+    /**
+     * @throws \PHPUnit\Framework\MockObject\Exception
+     */
+    #[Test]
+    public function messageActionReturnsDefaultStringAfterCaughtException(): void
+    {
+        /** @phpstan-ignore-next-line */
+        $mockRepo = $this->createMock(MessageRepository::class);
+        $mockRepo
+            ->method('getRandomMessageFromFile')
+            ->willThrowException(new CouldNotReadFromFileException());
+
+        $mockRepo
+            ->method('getRandomMessageBySource')
+            ->willReturn(MessageSource::Undefined->value);
+
+        $controller = new MessageController($mockRepo);
+        $response = $controller->messageAction();
+
+        self::assertEquals(MessageSource::Undefined->value, $response->getContent());
     }
 }

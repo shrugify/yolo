@@ -43,7 +43,7 @@ final class MessageRepository
                 ),
                 default => MessageSource::Undefined->value,
             };
-        } catch (CouldNotReadFromFileException) {
+        } catch (CouldNotReadFromFileException $e) {
             return MessageSource::Undefined->value;
         }
     }
@@ -58,7 +58,7 @@ final class MessageRepository
      * @return string[]
      * @throws CouldNotReadFromFileException
      */
-    private function getMessageArrayFromFile(string $filePath): array
+    public function getMessageArrayFromFile(string $filePath): array
     {
         $fileContents = file_get_contents($filePath);
 
@@ -72,15 +72,14 @@ final class MessageRepository
     /**
      * @throws CouldNotReadFromFileException
      */
-    private function getRandomMessageFromFile(string $filePath, bool $prefixMessage = true): string
+    public function getRandomMessageFromFile(string $filePath, bool $prefixMessage = true): string
     {
-
-        $array = $this->getMessageArrayFromFile($filePath);
+        $messagesArray = $this->getMessageArrayFromFile($filePath);
 
         $randomizer = new Randomizer();
 
         if ($prefixMessage) {
-            $prefix = [
+            $prefixArray = [
                 '',
                 '',
                 '',
@@ -93,13 +92,13 @@ final class MessageRepository
             ];
         }
 
-        return $prefixMessage ? $prefix[$randomizer->getInt(0, count($prefix) - 1)] . $array[$randomizer->getInt(0, count($array) - 1)] :  $array[$randomizer->getInt(0, count($array) - 1)];
+        return $prefixMessage ? $prefixArray[$randomizer->getInt(0, count($prefixArray) - 1)] . $messagesArray[$randomizer->getInt(0, count($messagesArray) - 1)] :  $messagesArray[$randomizer->getInt(0, count($messagesArray) - 1)];
     }
 
     /**
      * @throws CouldNotReadFromFileException
      */
-    public function getRandomMessageFromVariousSources(): string
+    private function getRandomMessageFromVariousSources(): string
     {
 
         $source = [

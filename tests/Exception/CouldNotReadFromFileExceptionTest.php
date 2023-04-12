@@ -19,26 +19,22 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-namespace App\Tests\Controller;
+namespace App\Tests\Exception;
 
+use App\Exception\CouldNotReadFromFileException;
 use PHPUnit\Framework\Attributes\Test;
-use Symfony\Bundle\FrameworkBundle\KernelBrowser;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use PHPUnit\Framework\TestCase;
 
-final class WhatTheCommitControllerTest extends WebTestCase
+final class CouldNotReadFromFileExceptionTest extends TestCase
 {
 
-    private KernelBrowser $client;
-
-    protected function setUp(): void
-    {
-        $this->client = self::createClient();
-    }
-
     #[Test]
-    public function whatTheCommitActionReturnsContent(): void
+    public function createExceptionReturnsString(): void
     {
-        $crawler = $this->client->request('GET', '/whatthecommit.txt');
-        self::assertResponseIsSuccessful();
+        self::assertSame(
+            'The contents of "dummy.txt" could not be read.',
+            CouldNotReadFromFileException::create('dummy.txt')->getMessage(),
+        );
+
     }
 }
