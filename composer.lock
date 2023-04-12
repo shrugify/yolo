@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "db975272e5f7769ccef5c485edfe9810",
+    "content-hash": "2850b7bac94a2e657b06060d442cb341",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -7397,6 +7397,61 @@
             "time": "2022-08-18T16:18:26+00:00"
         },
         {
+            "name": "mteu/docblock-rules",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mteu/docblock-rules.git",
+                "reference": "168d45ee6b465afd4d20380422f6cd5e1cee1251"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mteu/docblock-rules/zipball/168d45ee6b465afd4d20380422f6cd5e1cee1251",
+                "reference": "168d45ee6b465afd4d20380422f6cd5e1cee1251",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "phpstan/extension-installer": "^1.2",
+                "phpstan/phpstan": "^1.10"
+            },
+            "require-dev": {
+                "armin/editorconfig-cli": "^1.5",
+                "ergebnis/composer-normalize": "^2.29"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mteu\\DocBlockRules\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Adler",
+                    "email": "mteu@mailbox.org",
+                    "homepage": "https://github.com/mteu",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A few additional rules for PHPStan",
+            "support": {
+                "issues": "https://github.com/mteu/docblock-rules/issues",
+                "source": "https://github.com/mteu/docblock-rules/tree/0.1.0"
+            },
+            "time": "2023-04-12T12:30:29+00:00"
+        },
+        {
             "name": "myclabs/deep-copy",
             "version": "1.11.1",
             "source": {
@@ -9974,20 +10029,21 @@
         },
         {
             "name": "shrug/zealous-stan",
-            "version": "0.2.7",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shrugify/zealous-stan.git",
-                "reference": "773926d55029ddd2f83ec7ae09eda19d2fa16009"
+                "reference": "5b60f8bc9cf67ad31f079c0e56587be3b0c363ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shrugify/zealous-stan/zipball/773926d55029ddd2f83ec7ae09eda19d2fa16009",
-                "reference": "773926d55029ddd2f83ec7ae09eda19d2fa16009",
+                "url": "https://api.github.com/repos/shrugify/zealous-stan/zipball/5b60f8bc9cf67ad31f079c0e56587be3b0c363ae",
+                "reference": "5b60f8bc9cf67ad31f079c0e56587be3b0c363ae",
                 "shasum": ""
             },
             "require": {
                 "ergebnis/phpstan-rules": "^1.0",
+                "mteu/docblock-rules": "^0.1",
                 "php": "^8.1",
                 "phpstan/extension-installer": "^1.2",
                 "phpstan/phpstan": "^1.10",
@@ -10028,9 +10084,9 @@
             "description": "A modest and highly subjective collection of commonly used phpstan rules",
             "support": {
                 "issues": "https://github.com/shrugify/zealous-stan/issues",
-                "source": "https://github.com/shrugify/zealous-stan/tree/0.2.7"
+                "source": "https://github.com/shrugify/zealous-stan/tree/0.3.0"
             },
-            "time": "2023-04-11T08:48:49+00:00"
+            "time": "2023-04-12T13:06:23+00:00"
         },
         {
             "name": "spaze/phpstan-disallowed-calls",
