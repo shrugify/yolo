@@ -1,7 +1,7 @@
 {% extends 'base.html.twig'%}
 
 {% block body %}
-    <section class="shell-wrapper clipboardBtn">
+    <section class="shell-wrapper clipboardBtn" data-tooltip="Copy to clipboard" data-placement="bottom">
         <pre>
             <code class="typing">
                 git commit -m "{{ message }}"

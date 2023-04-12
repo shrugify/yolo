@@ -26,6 +26,11 @@ code.typing::before {
     cursor: pointer;
 }
 
+.clipboardBtn[data-tooltip] {
+    cursor: pointer;
+    border-bottom: 0;
+}
+
 @font-face {
     font-family: "JetBrains Mono", monospace;
     src: url("../fonts/jbm-reg.woff2") format("woff2");
