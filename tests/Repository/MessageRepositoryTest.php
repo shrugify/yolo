@@ -59,10 +59,15 @@ final class MessageRepositoryTest extends TestCase
     }
 
     #[Test]
+    public function getRandomMessageFromSourceWillReturnDefaultAfterExceptionIsCaught(): void
+    {
+        self::assertEquals(MessageSource::Undefined->value, $this->messageRepository->getRandomMessageBySource(MessageSource::TestCaseWorkAround));
+    }
+
+    #[Test]
     public function getRandomMessageFromFileWillThrowException(): void
     {
         self::expectException(\App\Exception\CouldNotReadFromFileException::class);
-
         $this->messageRepository->getRandomMessageFromFile('dummy.txt');
     }
 }
