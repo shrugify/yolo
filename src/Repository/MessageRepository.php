@@ -34,7 +34,8 @@ final class MessageRepository
         try {
             return match ($source) {
                 MessageSource::Mixed => $this->getRandomMessageFromVariousSources(),
-                MessageSource::LocalFile => $this->getRandomMessageFromFile(
+                MessageSource::LocalFile,
+                MessageSource::TestCaseWorkAround => $this->getRandomMessageFromFile(
                     $this->getPathToLocalFile($source->value),
                 ),
                 MessageSource::WhatTheCommit => $this->getRandomMessageFromFile(
