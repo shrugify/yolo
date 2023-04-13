@@ -10,3 +10,11 @@ copyBtn.addEventListener("click", () => {
       console.error("Error copying text to clipboard:", error);
     });
 });
+
+
+const steps = commitCmd.length;
+const duration = steps / 12;
+document.querySelector("code.typing").style.animation = `
+  typewrite ${duration}s steps(${steps}, end) forwards,
+  caret .75s step-end infinite
+`;
