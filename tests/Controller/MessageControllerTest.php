@@ -57,10 +57,6 @@ final class MessageControllerTest extends WebTestCase
         /** @phpstan-ignore-next-line */
         $mockRepo = $this->createMock(MessageRepository::class);
         $mockRepo
-            ->method('getRandomMessageFromFile')
-            ->willThrowException(new CouldNotReadFromFileException());
-
-        $mockRepo
             ->method('getRandomMessageBySource')
             ->willReturn(MessageSource::Undefined->value);
 

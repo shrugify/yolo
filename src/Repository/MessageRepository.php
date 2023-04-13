@@ -35,7 +35,7 @@ final class MessageRepository
             return match ($source) {
                 MessageSource::Mixed => $this->getRandomMessageFromVariousSources(),
                 MessageSource::LocalFile => $this->getRandomMessageFromFile(
-                    $this->getPathToLocalFile(MessageSource::LocalFile->value),
+                    $this->getPathToLocalFile($source->value),
                 ),
                 MessageSource::WhatTheCommit => $this->getRandomMessageFromFile(
                     $source->value,
@@ -43,11 +43,9 @@ final class MessageRepository
                 ),
                 default => MessageSource::Undefined->value,
             };
-            // @codeCoverageIgnoreStart
-        } catch (CouldNotReadFromFileException $e) {
+        } catch (CouldNotReadFromFileException) {
             return MessageSource::Undefined->value;
         }
-        // @codeCoverageIgnoreEnd
     }
 
     public function getPathToLocalFile(string $relativePath): string
@@ -62,7 +60,8 @@ final class MessageRepository
      */
     public function getMessageArrayFromFile(string $filePath): array
     {
-        $fileContents = file_get_contents($filePath);
+        /** @phpstan-ignore-next-line */
+        $fileContents = @file_get_contents($filePath);
 
         if (false === $fileContents) {
             throw CouldNotReadFromFileException::create($filePath);
