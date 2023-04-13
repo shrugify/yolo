@@ -5,10 +5,6 @@ code.typing {
         "Consolas",
         "Roboto Mono",
         monospace;
-    animation:
-        /** @todo: steps need to be determined dynamically based on content.length **/
-        typewrite 3.5s steps(40, end) forwards,
-        caret .75s step-end infinite;
     border-radius: 0;
     border-right: .4rem solid #fff;
     color: #fff;
