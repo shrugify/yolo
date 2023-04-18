@@ -56,7 +56,7 @@
         "phpstan/extension-installer": "^1.2",
         "phpstan/phpstan": "^1.8",
         "phpstan/phpstan-symfony": "^1.2",
-        "phpunit/phpunit": "^10.0",
+        "phpunit/phpunit": "^10.1",
         "rector/rector": "^0.15",
         "roave/security-advisories": "dev-latest",
         "shrug/zealous-stan": "^0.3",
@@ -64,7 +64,6 @@
         "symfony/css-selector": "6.2.*",
         "symfony/debug-bundle": "6.2.*",
         "symfony/maker-bundle": "^1.0",
-        "symfony/phpunit-bridge": "^6.2",
         "symfony/stopwatch": "6.2.*",
         "symfony/var-dumper": "6.2.*",
         "symfony/web-profiler-bundle": "6.2.*",
@@ -157,7 +156,7 @@
             "@test:unit",
             "@test:unit:coverage"
         ],
-        "test:unit": "phpunit -c phpunit.xml",
-        "test:unit:coverage": "XDEBUG_MODE=coverage phpunit -c phpunit.coverage.xml"
+        "test:unit": "vendor/bin/phpunit -c phpunit.xml",
+        "test:unit:coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit -c phpunit.coverage.xml"
     }
 }

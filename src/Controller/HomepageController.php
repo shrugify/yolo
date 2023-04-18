@@ -49,7 +49,7 @@ final readonly class HomepageController
      * @throws LoaderError
      */
     #[Route(path: '/')]
-    public function homepageAction(): Response
+    public function __invoke(): Response
     {
         return new Response(
             $this->twig->render(
