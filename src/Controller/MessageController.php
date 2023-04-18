@@ -38,7 +38,7 @@ final readonly class MessageController
     }
 
     #[Route(path: '/message.txt')]
-    public function messageAction(): Response
+    public function __invoke(): Response
     {
         return JsonResponse::fromJsonString(
             $this->messageRepository->getRandomMessageBySource(

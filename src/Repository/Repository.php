@@ -19,11 +19,8 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-use Symfony\Component\Dotenv\Dotenv;
-use Symfony\Component\Filesystem\Filesystem;
+namespace App\Repository;
 
-require dirname(__DIR__).'/vendor/autoload.php';
-DG\BypassFinals::enable();
-
-(new Dotenv())->bootEnv(dirname(__DIR__).'/.env');
-(new Filesystem())->remove(__DIR__.'/../var/cache/test');
+interface Repository
+{
+}

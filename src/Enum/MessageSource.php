@@ -25,7 +25,6 @@ enum MessageSource: string
 {
     case LocalFile = '/data/messages.txt';
     case Mixed = '';
-    case TestCaseWorkAround = 'foo'; // I'm still trying to figure out a better way to kinda mock enum values
     case Undefined = '¯\_(ツ)_/¯';
     case WhatTheCommit = 'https://raw.githubusercontent.com/ngerakines/commitment/main/commit_messages.txt';
 }

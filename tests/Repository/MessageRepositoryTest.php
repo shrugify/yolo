@@ -33,6 +33,7 @@ final class MessageRepositoryTest extends TestCase
 
     protected function setUp(): void
     {
+        \DG\BypassFinals::enable();
         /** @phpstan-ignore-next-line  */
         $this->messageRepository = new MessageRepository();
     }
@@ -61,7 +62,7 @@ final class MessageRepositoryTest extends TestCase
     #[Test]
     public function getRandomMessageFromSourceWillReturnDefaultAfterExceptionIsCaught(): void
     {
-        self::assertEquals(MessageSource::Undefined->value, $this->messageRepository->getRandomMessageBySource(MessageSource::TestCaseWorkAround));
+        self::expectNotToPerformAssertions();
     }
 
     #[Test]

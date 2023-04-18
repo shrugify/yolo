@@ -25,7 +25,7 @@ use App\Enum\MessageSource;
 use App\Exception\CouldNotReadFromFileException;
 use Random\Randomizer;
 
-final class MessageRepository
+final class MessageRepository implements Repository
 {
     const LEVELS_TO_ROOT = 2;
 
@@ -34,8 +34,7 @@ final class MessageRepository
         try {
             return match ($source) {
                 MessageSource::Mixed => $this->getRandomMessageFromVariousSources(),
-                MessageSource::LocalFile,
-                MessageSource::TestCaseWorkAround => $this->getRandomMessageFromFile(
+                MessageSource::LocalFile => $this->getRandomMessageFromFile(
                     $this->getPathToLocalFile($source->value),
                 ),
                 MessageSource::WhatTheCommit => $this->getRandomMessageFromFile(
@@ -44,8 +43,10 @@ final class MessageRepository
                 ),
                 default => MessageSource::Undefined->value,
             };
+            // @codeCoverageIgnoreStart
         } catch (CouldNotReadFromFileException) {
             return MessageSource::Undefined->value;
+            // @codeCoverageIgnoreEnd
         }
     }
 

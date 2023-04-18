@@ -38,7 +38,8 @@ $configuration['parameters']['ergebnis'] = [
     'classesAllowedToBeExtended' => [
         Exception::class,
         \App\Exception\Exception::class,
-        Symfony\Component\HttpKernel\Kernel::class,
+        \Symfony\Component\HttpKernel\Kernel::class,
+        \Mockery\Adapter\Phpunit\MockeryTestCase::class,
         \Symfony\Bundle\FrameworkBundle\Test\WebTestCase::class,
     ],
 ];
@@ -51,6 +52,7 @@ $configuration['parameters']['type_coverage'] = [
 ];
 
 $ignoreErrors = [
+    '#^Interface must be located in "Contract" or "Contracts" namespace$#',
     '#^Use separate function calls with readable variable names$#',
 ];
 
