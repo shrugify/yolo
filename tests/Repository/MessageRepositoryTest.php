@@ -22,6 +22,7 @@
 namespace App\Tests\Repository;
 
 use App\Enum\MessageSource;
+use App\Exception\CouldNotReadFromFileException;
 use App\Repository\MessageRepository;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -60,15 +61,18 @@ final class MessageRepositoryTest extends TestCase
     }
 
     #[Test]
-    public function getRandomMessageFromSourceWillReturnDefaultAfterExceptionIsCaught(): void
+    public function getRandomMessageReturnsDefaultWhileExceptionIsCaught(): void
     {
-        self::expectNotToPerformAssertions();
+        self::assertEquals(
+            MessageSource::Undefined->value,
+            $this->messageRepository->getRandomMessageFromFile('foo/bar.txt'),
+        );
     }
 
     #[Test]
-    public function getRandomMessageFromFileWillThrowException(): void
+    public function getMessageArrayFromFileThrowsException(): void
     {
-        self::expectException(\App\Exception\CouldNotReadFromFileException::class);
-        $this->messageRepository->getRandomMessageFromFile('dummy.txt');
+        self::expectException(CouldNotReadFromFileException::class);
+        $this->messageRepository->getMessageArrayFromFile('foo/bar.txt');
     }
 }
