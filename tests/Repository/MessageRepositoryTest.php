@@ -31,41 +31,59 @@ final class MessageRepositoryTest extends TestCase
 {
     /** @phpstan-ignore-next-line  */
     private readonly MessageRepository $messageRepository;
+    private string $testFile = 'foo/bar.txt';
 
     protected function setUp(): void
     {
-        \DG\BypassFinals::enable();
         /** @phpstan-ignore-next-line  */
         $this->messageRepository = new MessageRepository();
     }
 
     #[Test]
-    public function getRandomMessageFromSourceReturnsContent(): void
+    public function missingMessageSourceReturnsDefault(): void
     {
-        self::assertSame(
+        self::assertEquals(
             MessageSource::Undefined->value,
             $this->messageRepository->getRandomMessageBySource(null),
         );
+    }
 
-        $localMessage = $this->messageRepository->getRandomMessageBySource(MessageSource::LocalFile);
+
+    #[Test]
+    public function getRandomMessageFromValidSourceReturnsContent(): void
+    {
+        foreach (MessageSource::cases() as $source) {
+            self::assertNotEmpty(
+                $this->messageRepository->getRandomMessageBySource($source),
+            );
+        }
+    }
+
+    #[Test]
+    public function foo(): void
+    {
         self::assertFileExists(
             $this->messageRepository->getPathToLocalFile(
                 MessageSource::LocalFile->value,
             ),
         );
-
-        self::assertNotEmpty($localMessage);
-
-        $localMessage = $this->messageRepository->getRandomMessageBySource(MessageSource::WhatTheCommit);
-        self::assertNotEmpty($localMessage);
     }
 
+    #[Test]
+    public function testFileDoesNotExist(): void
+    {
+        self::assertFileDoesNotExist(
+            $this->messageRepository->getPathToLocalFile(
+                $this->testFile,
+            ),
+        );
+    }
     #[Test]
     public function getRandomMessageReturnsDefaultWhileExceptionIsCaught(): void
     {
         self::assertEquals(
             MessageSource::Undefined->value,
-            $this->messageRepository->getRandomMessageFromFile('foo/bar.txt'),
+            $this->messageRepository->getRandomMessageFromFile($this->testFile),
         );
     }
 
@@ -73,6 +91,6 @@ final class MessageRepositoryTest extends TestCase
     public function getMessageArrayFromFileThrowsException(): void
     {
         self::expectException(CouldNotReadFromFileException::class);
-        $this->messageRepository->getMessageArrayFromFile('foo/bar.txt');
+        $this->messageRepository->getMessageArrayFromFile($this->testFile);
     }
 }
