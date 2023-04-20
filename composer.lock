@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a01a689342d856edf57e673735318e6b",
+    "content-hash": "18c67b38fd819c373383dc0bb2e816bf",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -7452,6 +7452,67 @@
             "time": "2023-04-12T12:30:29+00:00"
         },
         {
+            "name": "mteu/zealous-stan",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mteu/zealous-stan.git",
+                "reference": "5b60f8bc9cf67ad31f079c0e56587be3b0c363ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mteu/zealous-stan/zipball/5b60f8bc9cf67ad31f079c0e56587be3b0c363ae",
+                "reference": "5b60f8bc9cf67ad31f079c0e56587be3b0c363ae",
+                "shasum": ""
+            },
+            "require": {
+                "ergebnis/phpstan-rules": "^1.0",
+                "mteu/docblock-rules": "^0.1",
+                "php": "^8.1",
+                "phpstan/extension-installer": "^1.2",
+                "phpstan/phpstan": "^1.10",
+                "phpstan/phpstan-deprecation-rules": "^1.1",
+                "phpstan/phpstan-strict-rules": "^1.4",
+                "spaze/phpstan-disallowed-calls": "^2.11",
+                "symplify/phpstan-rules": "^11.2.4"
+            },
+            "require-dev": {
+                "armin/editorconfig-cli": "^1.5",
+                "ergebnis/composer-normalize": "^2.29"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Shrug\\ZealousStan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Adler",
+                    "email": "mteu@mailbox.org",
+                    "homepage": "https://github.com/mteu",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "A modest and highly subjective collection of commonly used phpstan rules",
+            "support": {
+                "issues": "https://github.com/mteu/zealous-stan/issues",
+                "source": "https://github.com/mteu/zealous-stan/tree/0.3.0"
+            },
+            "time": "2023-04-12T13:06:23+00:00"
+        },
+        {
             "name": "myclabs/deep-copy",
             "version": "1.11.1",
             "source": {
@@ -10032,67 +10093,6 @@
                 }
             ],
             "time": "2023-02-07T11:34:05+00:00"
-        },
-        {
-            "name": "shrug/zealous-stan",
-            "version": "0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/shrugify/zealous-stan.git",
-                "reference": "5b60f8bc9cf67ad31f079c0e56587be3b0c363ae"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/shrugify/zealous-stan/zipball/5b60f8bc9cf67ad31f079c0e56587be3b0c363ae",
-                "reference": "5b60f8bc9cf67ad31f079c0e56587be3b0c363ae",
-                "shasum": ""
-            },
-            "require": {
-                "ergebnis/phpstan-rules": "^1.0",
-                "mteu/docblock-rules": "^0.1",
-                "php": "^8.1",
-                "phpstan/extension-installer": "^1.2",
-                "phpstan/phpstan": "^1.10",
-                "phpstan/phpstan-deprecation-rules": "^1.1",
-                "phpstan/phpstan-strict-rules": "^1.4",
-                "spaze/phpstan-disallowed-calls": "^2.11",
-                "symplify/phpstan-rules": "^11.2.4"
-            },
-            "require-dev": {
-                "armin/editorconfig-cli": "^1.5",
-                "ergebnis/composer-normalize": "^2.29"
-            },
-            "type": "phpstan-extension",
-            "extra": {
-                "phpstan": {
-                    "includes": [
-                        "extension.neon"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Shrug\\ZealousStan\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Martin Adler",
-                    "email": "mteu@mailbox.org",
-                    "homepage": "https://github.com/mteu",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "A modest and highly subjective collection of commonly used phpstan rules",
-            "support": {
-                "issues": "https://github.com/shrugify/zealous-stan/issues",
-                "source": "https://github.com/shrugify/zealous-stan/tree/0.3.0"
-            },
-            "time": "2023-04-12T13:06:23+00:00"
         },
         {
             "name": "spaze/phpstan-disallowed-calls",
