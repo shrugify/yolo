@@ -2,5 +2,11 @@
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
 		"github>mteu/renovate-configuration"
-	]
+	],
+	"packageRules": [
+		{
+		  "matchPackageNames": ["symfony"],
+		  "allowedVersions": "<=6.2"
+		}
+  	]
 }
