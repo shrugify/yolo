@@ -67,7 +67,7 @@
         "symfony/stopwatch": "6.2.*",
         "symfony/var-dumper": "6.2.*",
         "symfony/web-profiler-bundle": "6.2.*",
-        "tomasvotruba/type-coverage": "^0.1.0"
+        "tomasvotruba/type-coverage": "^0.2.0"
     },
     "replace": {
         "symfony/polyfill-ctype": "*",
