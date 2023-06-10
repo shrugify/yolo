@@ -38,12 +38,15 @@ $configuration['parameters']['paths'] = [
 $configuration['parameters']['symfony'] = [
     'consoleApplicationLoader' => 'tests/bootstrap.php',
 ];
+
 $configuration['parameters']['ergebnis'] = [
-    'classesAllowedToBeExtended' => [
-        Exception::class,
-        AppException::class,
-        Kernel::class,
-        WebTestCase::class,
+    'noExtends' => [
+        'classesAllowedToBeExtended' => [
+            Exception::class,
+            AppException::class,
+            Kernel::class,
+            WebTestCase::class,
+        ],
     ],
 ];
 
