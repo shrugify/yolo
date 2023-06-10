@@ -21,6 +21,10 @@ declare(strict_types=1);
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+use App\Exception\Exception as AppException;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpKernel\Kernel;
+
 $configuration = require 'phpstan-baseline.php';
 
 $configuration['parameters']['level'] = 'max';
@@ -37,10 +41,9 @@ $configuration['parameters']['symfony'] = [
 $configuration['parameters']['ergebnis'] = [
     'classesAllowedToBeExtended' => [
         Exception::class,
-        \App\Exception\Exception::class,
-        \Symfony\Component\HttpKernel\Kernel::class,
-        \Mockery\Adapter\Phpunit\MockeryTestCase::class,
-        \Symfony\Bundle\FrameworkBundle\Test\WebTestCase::class,
+        AppException::class,
+        Kernel::class,
+        WebTestCase::class,
     ],
 ];
 
