@@ -27,7 +27,7 @@ use Random\Randomizer;
 
 final class MessageRepository implements Repository
 {
-    const LEVELS_TO_ROOT = 2;
+    public const LEVELS_TO_ROOT = 2;
 
     public function getRandomMessageBySource(?MessageSource $source): string
     {
@@ -50,7 +50,6 @@ final class MessageRepository implements Repository
     }
 
     /**
-     * @param string $filePath
      * @return string[]
      * @throws CouldNotReadFromFileException
      */
