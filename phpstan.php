@@ -59,7 +59,6 @@ $configuration['parameters']['type_coverage'] = [
 
 $ignoreErrors = [
     '#^Interface must be located in "Contract" or "Contracts" namespace$#',
-    '#^Use separate function calls with readable variable names$#',
 ];
 
 foreach ($configuration['parameters']['ignoreErrors'] as $baselineIgnore) {
