@@ -25,7 +25,7 @@ require 'recipe/common.php';
 require 'contrib/rsync.php';
 
 set('application', 'yolo');
-// set('keep_releases', 3);
+set('keep_releases', 3);
 
 set('rsync_src', __DIR__);
 set('rsync', [
@@ -43,9 +43,12 @@ set('rsync', [
         '/.php-cs-fixer.cache',
         '/.php-cs-fixer.dist.php',
         'deploy.php',
+        'docker-compose.yml',
+        'docker-compose.override.yml',
         'phpstan.php',
         'phpstan-baseline.php',
-        'phpunit.xml.dist',
+        'phpunit.coverage.xml',
+        'phpunit.xml',
         'rector.php',
         'renovate.json',
     ],
@@ -89,6 +92,12 @@ task('symfony', [
     'symfony:cache:clear',
     'symfony:cache:warmup',
 ]);
+
+task('cache:opcode:flush', function () {
+    run('echo "<?php opcache_reset();" > {{release_path}}/public/cache.php');
+    run('curl -I https://{{domain}}/cache.php');
+    run('rm -f {{release_path}}/public/cache.php');
+});
 
 // Main deploy task
 task('deploy', [
