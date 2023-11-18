@@ -6,7 +6,7 @@
 	"packageRules": [
 		{
 		  "matchPackagePrefixes": ["symfony/"],
-		  "allowedVersions": "<=6.2"
+		  "allowedVersions": "<=6.3"
 		}
   	]
 }
