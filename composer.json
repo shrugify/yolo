@@ -49,7 +49,7 @@
 		"twig/twig": "^2.12 || ^3.0"
 	},
 	"require-dev": {
-		"armin/editorconfig-cli": "^1.5",
+		"armin/editorconfig-cli": "^2.0",
 		"dg/bypass-finals": "^1.4",
 		"ergebnis/composer-normalize": "^2.33",
 		"friendsofphp/php-cs-fixer": "^3.13",
