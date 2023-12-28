@@ -53,7 +53,7 @@
 		"dg/bypass-finals": "^1.4",
 		"ergebnis/composer-normalize": "^2.33",
 		"friendsofphp/php-cs-fixer": "^3.13",
-		"mteu/zealous-stan": "^0.4.0",
+		"mteu/zealous-stan": "^0.5.0",
 		"phpstan/extension-installer": "^1.2",
 		"phpstan/phpstan": "^1.8",
 		"phpstan/phpstan-symfony": "^1.2",

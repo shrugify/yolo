@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab0a1ceaa82b988f8dfe652f42baf15f",
+    "content-hash": "3318353f28b2a62db9e4b6c2ee814ff3",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -7445,27 +7445,27 @@
         },
         {
             "name": "mteu/docblock-rules",
-            "version": "0.1.5",
+            "version": "0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mteu/docblock-rules.git",
-                "reference": "2bdbaae60c215f9461867af7c76975eb413cdaf2"
+                "reference": "def588dcef19a8dcde916b281772abe09f686592"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mteu/docblock-rules/zipball/2bdbaae60c215f9461867af7c76975eb413cdaf2",
-                "reference": "2bdbaae60c215f9461867af7c76975eb413cdaf2",
+                "url": "https://api.github.com/repos/mteu/docblock-rules/zipball/def588dcef19a8dcde916b281772abe09f686592",
+                "reference": "def588dcef19a8dcde916b281772abe09f686592",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1",
+                "php": "~8.2 || ~8.3",
                 "phpstan/extension-installer": "^1.2",
                 "phpstan/phpstan": "^1.10"
             },
             "require-dev": {
-                "armin/editorconfig-cli": "^1.5",
-                "ergebnis/composer-normalize": "^2.37",
-                "phpunit/phpunit": "^10.3"
+                "armin/editorconfig-cli": "^1.8",
+                "ergebnis/composer-normalize": "^2.41",
+                "phpunit/phpunit": "^10.5"
             },
             "type": "phpstan-extension",
             "extra": {
@@ -7495,33 +7495,33 @@
             "description": "A few additional rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mteu/docblock-rules/issues",
-                "source": "https://github.com/mteu/docblock-rules/tree/0.1.5"
+                "source": "https://github.com/mteu/docblock-rules/tree/0.2"
             },
-            "time": "2023-10-03T13:28:21+00:00"
+            "time": "2023-12-28T11:54:46+00:00"
         },
         {
             "name": "mteu/zealous-stan",
-            "version": "0.4.2",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mteu/zealous-stan.git",
-                "reference": "533e6c5d3eae440e8b73961e36f3b9eea0a87b5c"
+                "reference": "17917c61895d188b9bee2aa9ed01c1125cd97f85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mteu/zealous-stan/zipball/533e6c5d3eae440e8b73961e36f3b9eea0a87b5c",
-                "reference": "533e6c5d3eae440e8b73961e36f3b9eea0a87b5c",
+                "url": "https://api.github.com/repos/mteu/zealous-stan/zipball/17917c61895d188b9bee2aa9ed01c1125cd97f85",
+                "reference": "17917c61895d188b9bee2aa9ed01c1125cd97f85",
                 "shasum": ""
             },
             "require": {
                 "ergebnis/phpstan-rules": "^2.1",
-                "mteu/docblock-rules": "^0.1",
-                "php": "~8.1.0 || ~8.2.0",
+                "mteu/docblock-rules": "^0.2",
+                "php": "~8.2 || ~8.3",
                 "phpstan/extension-installer": "^1.3",
                 "phpstan/phpstan": "^1.10",
                 "phpstan/phpstan-deprecation-rules": "^1.1",
                 "phpstan/phpstan-strict-rules": "^1.5",
-                "spaze/phpstan-disallowed-calls": "^2.16",
+                "spaze/phpstan-disallowed-calls": "^3.0",
                 "symplify/phpstan-rules": "^12.3.0"
             },
             "require-dev": {
@@ -7556,9 +7556,9 @@
             "description": "A modest and highly subjective collection of commonly used phpstan rules",
             "support": {
                 "issues": "https://github.com/mteu/zealous-stan/issues",
-                "source": "https://github.com/mteu/zealous-stan/tree/0.4.2"
+                "source": "https://github.com/mteu/zealous-stan/tree/0.5.0"
             },
-            "time": "2023-10-03T13:58:20+00:00"
+            "time": "2023-12-28T14:48:04+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -10260,16 +10260,16 @@
         },
         {
             "name": "spaze/phpstan-disallowed-calls",
-            "version": "v2.16.1",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spaze/phpstan-disallowed-calls.git",
-                "reference": "1500f90ff6a705009731cc14e50d4faf2d202bf3"
+                "reference": "69935c9f519cae95e394fbde23ce5f962b2eba2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spaze/phpstan-disallowed-calls/zipball/1500f90ff6a705009731cc14e50d4faf2d202bf3",
-                "reference": "1500f90ff6a705009731cc14e50d4faf2d202bf3",
+                "url": "https://api.github.com/repos/spaze/phpstan-disallowed-calls/zipball/69935c9f519cae95e394fbde23ce5f962b2eba2f",
+                "reference": "69935c9f519cae95e394fbde23ce5f962b2eba2f",
                 "shasum": ""
             },
             "require": {
@@ -10315,7 +10315,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spaze/phpstan-disallowed-calls/issues",
-                "source": "https://github.com/spaze/phpstan-disallowed-calls/tree/v2.16.1"
+                "source": "https://github.com/spaze/phpstan-disallowed-calls/tree/v3.0.0"
             },
             "funding": [
                 {
@@ -10323,7 +10323,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-28T15:29:27+00:00"
+            "time": "2023-12-22T18:15:31+00:00"
         },
         {
             "name": "symfony/browser-kit",
