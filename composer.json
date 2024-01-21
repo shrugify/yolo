@@ -53,6 +53,7 @@
         "dg/bypass-finals": "^1.4",
         "ergebnis/composer-normalize": "^2.33",
         "friendsofphp/php-cs-fixer": "^3.13",
+		"madewithlove/license-checker": "dev-feature/add-symfony-7-support",
         "mteu/zealous-stan": "^0.4.0",
         "phpstan/extension-installer": "^1.2",
         "phpstan/phpstan": "^1.8",
@@ -81,6 +82,13 @@
     "conflict": {
         "symfony/symfony": "*"
     },
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "git@github.com:mteu/license-checker-php.git",
+			"name": "madewithlove/license-checker-php"
+		}
+	],
     "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
@@ -123,6 +131,10 @@
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
+		"check": [
+			"@check:licenses"
+		],
+		"check:licenses": "vendor/bin/license-checker check",
         "fix": [
             "@fix:composer",
             "@fix:editorconfig",

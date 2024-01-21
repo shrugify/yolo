@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c181f03d740d8faa36c562383be74326",
+    "content-hash": "bf6c42d9e6ec9072fb6d17fc71d6a5e6",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -7406,6 +7406,61 @@
             "time": "2020-07-06T04:49:32+00:00"
         },
         {
+            "name": "madewithlove/license-checker",
+            "version": "dev-feature/add-symfony-7-support",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mteu/license-checker-php.git",
+                "reference": "71c230c93eb96e00820c7336835c23f43efa3e97"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mteu/license-checker-php/zipball/71c230c93eb96e00820c7336835c23f43efa3e97",
+                "reference": "71c230c93eb96e00820c7336835c23f43efa3e97",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "symfony/console": "^4.0 || ^5.0 || ^6.0 || ^7.0",
+                "symfony/process": "^4.0 || ^5.0 || ^6.0 || ^7.0",
+                "symfony/yaml": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.16",
+                "phpunit/phpunit": "^10.1",
+                "psalm/plugin-phpunit": "^0.18",
+                "vimeo/psalm": "^5.9"
+            },
+            "bin": [
+                "bin/license-checker"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LicenseChecker\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "LicenseChecker\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "madewithlove",
+                    "email": "hello@madewithlove.com"
+                }
+            ],
+            "description": "CLI tool to verify allowed licenses for composer dependencies",
+            "support": {
+                "source": "https://github.com/mteu/license-checker-php/tree/feature/add-symfony-7-support"
+            },
+            "time": "2024-01-21T14:15:48+00:00"
+        },
+        {
             "name": "masterminds/html5",
             "version": "2.8.1",
             "source": {
@@ -11004,6 +11059,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "madewithlove/license-checker": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,

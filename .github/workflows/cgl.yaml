@@ -31,6 +31,10 @@ jobs:
       - name: Install Composer dependencies
         uses: ramsey/composer-install@v2
 
+      # Check licenses
+      - name: Compare vendor licenses against whitelist
+        run: composer check:licenses
+
       - name: Lint composer.json
         run: composer lint:composer -- --dry-run
 
