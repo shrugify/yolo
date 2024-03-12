@@ -7291,16 +7291,16 @@
         },
         {
             "name": "mteu/docblock-rules",
-            "version": "0.2",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mteu/docblock-rules.git",
-                "reference": "def588dcef19a8dcde916b281772abe09f686592"
+                "reference": "4ca140e76e9024f51c0eab813946bca131d006a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mteu/docblock-rules/zipball/def588dcef19a8dcde916b281772abe09f686592",
-                "reference": "def588dcef19a8dcde916b281772abe09f686592",
+                "url": "https://api.github.com/repos/mteu/docblock-rules/zipball/4ca140e76e9024f51c0eab813946bca131d006a9",
+                "reference": "4ca140e76e9024f51c0eab813946bca131d006a9",
                 "shasum": ""
             },
             "require": {
@@ -7309,7 +7309,7 @@
                 "phpstan/phpstan": "^1.10"
             },
             "require-dev": {
-                "armin/editorconfig-cli": "^1.8",
+                "armin/editorconfig-cli": "^2.0",
                 "ergebnis/composer-normalize": "^2.41",
                 "phpunit/phpunit": "^10.5"
             },
@@ -7341,22 +7341,22 @@
             "description": "A few additional rules for PHPStan",
             "support": {
                 "issues": "https://github.com/mteu/docblock-rules/issues",
-                "source": "https://github.com/mteu/docblock-rules/tree/0.2"
+                "source": "https://github.com/mteu/docblock-rules/tree/0.2.1"
             },
-            "time": "2023-12-28T11:54:46+00:00"
+            "time": "2024-03-11T03:54:55+00:00"
         },
         {
             "name": "mteu/zealous-stan",
-            "version": "0.5.2",
+            "version": "0.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mteu/zealous-stan.git",
-                "reference": "a47fab0dabf0f6abb61930845cc47ead7d7b5692"
+                "reference": "f6f8390e3808616f3d5cc9f6086fe2b952ec7872"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mteu/zealous-stan/zipball/a47fab0dabf0f6abb61930845cc47ead7d7b5692",
-                "reference": "a47fab0dabf0f6abb61930845cc47ead7d7b5692",
+                "url": "https://api.github.com/repos/mteu/zealous-stan/zipball/f6f8390e3808616f3d5cc9f6086fe2b952ec7872",
+                "reference": "f6f8390e3808616f3d5cc9f6086fe2b952ec7872",
                 "shasum": ""
             },
             "require": {
@@ -7397,9 +7397,9 @@
             "description": "A modest and highly opinionated collection of commonly used phpstan rules",
             "support": {
                 "issues": "https://github.com/mteu/zealous-stan/issues",
-                "source": "https://github.com/mteu/zealous-stan/tree/0.5.2"
+                "source": "https://github.com/mteu/zealous-stan/tree/0.5.3"
             },
-            "time": "2024-01-20T16:58:19+00:00"
+            "time": "2024-03-11T05:06:02+00:00"
         },
         {
             "name": "myclabs/deep-copy",
