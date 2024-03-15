@@ -10739,29 +10739,22 @@
         },
         {
             "name": "tomasvotruba/type-coverage",
-            "version": "0.2.3",
+            "version": "0.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TomasVotruba/type-coverage.git",
-                "reference": "213ef9cfcdcb1472c5e1a1d7c3c99d39347433f7"
+                "reference": "47f75151c3b3c4e040e0c68d9bba47597bf5ad6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TomasVotruba/type-coverage/zipball/213ef9cfcdcb1472c5e1a1d7c3c99d39347433f7",
-                "reference": "213ef9cfcdcb1472c5e1a1d7c3c99d39347433f7",
+                "url": "https://api.github.com/repos/TomasVotruba/type-coverage/zipball/47f75151c3b3c4e040e0c68d9bba47597bf5ad6f",
+                "reference": "47f75151c3b3c4e040e0c68d9bba47597bf5ad6f",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.2",
-                "phpstan/phpstan": "^1.10.60"
-            },
-            "require-dev": {
-                "phpstan/extension-installer": "^1.3",
-                "phpunit/phpunit": "^10.5",
-                "rector/rector": "^1.0.2",
-                "symplify/easy-coding-standard": "^12.1",
-                "tomasvotruba/unused-public": "^0.2",
-                "tracy/tracy": "^2.10"
+                "nette/utils": "^3.2 || ^4.0",
+                "php": "^7.2 || ^8.0",
+                "phpstan/phpstan": "^1.9.3"
             },
             "type": "phpstan-extension",
             "extra": {
@@ -10787,7 +10780,7 @@
             ],
             "support": {
                 "issues": "https://github.com/TomasVotruba/type-coverage/issues",
-                "source": "https://github.com/TomasVotruba/type-coverage/tree/0.2.3"
+                "source": "https://github.com/TomasVotruba/type-coverage/tree/0.2.4"
             },
             "funding": [
                 {
@@ -10799,7 +10792,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-08T18:25:10+00:00"
+            "time": "2024-03-15T11:34:50+00:00"
         }
     ],
     "aliases": [],
