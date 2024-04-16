@@ -10757,16 +10757,16 @@
         },
         {
             "name": "tomasvotruba/type-coverage",
-            "version": "0.2.5",
+            "version": "0.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TomasVotruba/type-coverage.git",
-                "reference": "3d463bc8a894d425eab837cb0f49d2c605068740"
+                "reference": "b2144df489f8ae95cc4ac750a6cc10459da2b18e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TomasVotruba/type-coverage/zipball/3d463bc8a894d425eab837cb0f49d2c605068740",
-                "reference": "3d463bc8a894d425eab837cb0f49d2c605068740",
+                "url": "https://api.github.com/repos/TomasVotruba/type-coverage/zipball/b2144df489f8ae95cc4ac750a6cc10459da2b18e",
+                "reference": "b2144df489f8ae95cc4ac750a6cc10459da2b18e",
                 "shasum": ""
             },
             "require": {
@@ -10798,7 +10798,7 @@
             ],
             "support": {
                 "issues": "https://github.com/TomasVotruba/type-coverage/issues",
-                "source": "https://github.com/TomasVotruba/type-coverage/tree/0.2.5"
+                "source": "https://github.com/TomasVotruba/type-coverage/tree/0.2.7"
             },
             "funding": [
                 {
@@ -10810,7 +10810,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-16T10:07:54+00:00"
+            "time": "2024-04-16T13:08:26+00:00"
         }
     ],
     "aliases": [],
