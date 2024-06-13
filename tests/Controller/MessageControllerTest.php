@@ -43,7 +43,7 @@ final class MessageControllerTest extends WebTestCase
     #[Test]
     public function messageActionReturnsContent(): void
     {
-        $crawler = $this->client->request('GET', '/message.txt');
+        $crawler = $this->client->request(\Symfony\Component\HttpFoundation\Request::METHOD_GET, '/message.txt');
         self::assertResponseIsSuccessful();
     }
 }

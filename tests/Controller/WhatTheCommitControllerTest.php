@@ -38,7 +38,7 @@ final class WhatTheCommitControllerTest extends WebTestCase
     #[Test]
     public function whatTheCommitActionReturnsContent(): void
     {
-        $crawler = $this->client->request('GET', '/whatthecommit.txt');
+        $crawler = $this->client->request(\Symfony\Component\HttpFoundation\Request::METHOD_GET, '/whatthecommit.txt');
         self::assertResponseIsSuccessful();
     }
 }
