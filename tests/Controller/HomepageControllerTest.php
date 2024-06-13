@@ -38,7 +38,7 @@ final class HomepageControllerTest extends WebTestCase
     #[Test]
     public function controllerReturnsHomepage(): void
     {
-        $crawler = $this->client->request('GET', '/');
+        $crawler = $this->client->request(\Symfony\Component\HttpFoundation\Request::METHOD_GET, '/');
         self::assertResponseIsSuccessful();
         self::assertSelectorTextContains('code.typing', 'git commit -m');
     }
@@ -46,7 +46,7 @@ final class HomepageControllerTest extends WebTestCase
     #[Test]
     public function routeWithoutActionReturnsError(): void
     {
-        $crawler = $this->client->request('GET', '/dummy.txt');
+        $crawler = $this->client->request(\Symfony\Component\HttpFoundation\Request::METHOD_GET, '/dummy.txt');
         self::assertResponseStatusCodeSame(404);
     }
 }
