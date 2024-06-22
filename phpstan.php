@@ -29,7 +29,6 @@ $configuration = require 'phpstan-baseline.php';
 
 $configuration['parameters']['level'] = 'max';
 $configuration['parameters']['paths'] = [
-    'config',
     'public',
     'src',
     'tests',
@@ -48,13 +47,6 @@ $configuration['parameters']['ergebnis'] = [
             WebTestCase::class,
         ],
     ],
-];
-
-$configuration['parameters']['type_coverage'] = [
-    'return_type' => 100,
-    'param_type' => 100,
-    'property_type' => 100,
-    'print_suggestions' => true,
 ];
 
 $ignoreErrors = [
