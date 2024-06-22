@@ -26,7 +26,6 @@ return static function (RectorConfig $rectorConfig): void {
         SymfonySetList::SYMFONY_62,
         SymfonySetList::SYMFONY_CODE_QUALITY,
         SymfonySetList::SYMFONY_CONSTRUCTOR_INJECTION,
-        PHPUnitLevelSetList::UP_TO_PHPUNIT_100,
     ]);
 
     $rectorConfig->paths([
