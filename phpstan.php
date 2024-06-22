@@ -29,7 +29,6 @@ $configuration = require 'phpstan-baseline.php';
 
 $configuration['parameters']['level'] = 'max';
 $configuration['parameters']['paths'] = [
-    'config',
     'public',
     'src',
     'tests',
