@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
-use Rector\PHPUnit\Set\PHPUnitLevelSetList;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Symfony\Set\SymfonySetList;
 use Rector\ValueObject\PhpVersion;
@@ -37,10 +36,5 @@ return static function (RectorConfig $rectorConfig): void {
 
     $rectorConfig->skip([
         __DIR__ . '/vendor',
-    ]);
-
-    $rectorConfig->skip([
-        \Rector\Php74\Rector\LNumber\AddLiteralSeparatorToNumberRector::class,
-        \Rector\Php73\Rector\FuncCall\JsonThrowOnErrorRector::class,
     ]);
 };
