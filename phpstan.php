@@ -50,13 +50,6 @@ $configuration['parameters']['ergebnis'] = [
     ],
 ];
 
-$configuration['parameters']['type_coverage'] = [
-    'return_type' => 100,
-    'param_type' => 100,
-    'property_type' => 100,
-    'print_suggestions' => true,
-];
-
 $ignoreErrors = [
     '#^Interface must be located in "Contract" or "Contracts" namespace$#',
 ];

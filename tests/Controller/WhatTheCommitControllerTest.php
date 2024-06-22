@@ -24,6 +24,7 @@ namespace App\Tests\Controller;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Request;
 
 final class WhatTheCommitControllerTest extends WebTestCase
 {
@@ -38,7 +39,7 @@ final class WhatTheCommitControllerTest extends WebTestCase
     #[Test]
     public function whatTheCommitActionReturnsContent(): void
     {
-        $crawler = $this->client->request(\Symfony\Component\HttpFoundation\Request::METHOD_GET, '/whatthecommit.txt');
+        $crawler = $this->client->request(Request::METHOD_GET, '/whatthecommit.txt');
         self::assertResponseIsSuccessful();
     }
 }

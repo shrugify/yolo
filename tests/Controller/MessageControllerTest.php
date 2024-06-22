@@ -21,14 +21,10 @@
 
 namespace App\Tests\Controller;
 
-use App\Controller\MessageController;
-use App\Enum\MessageSource;
-use App\Exception\CouldNotReadFromFileException;
-use App\Repository\MessageRepository;
-use Mockery;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Request;
 
 final class MessageControllerTest extends WebTestCase
 {
@@ -43,7 +39,7 @@ final class MessageControllerTest extends WebTestCase
     #[Test]
     public function messageActionReturnsContent(): void
     {
-        $crawler = $this->client->request(\Symfony\Component\HttpFoundation\Request::METHOD_GET, '/message.txt');
+        $crawler = $this->client->request(Request::METHOD_GET, '/message.txt');
         self::assertResponseIsSuccessful();
     }
 }

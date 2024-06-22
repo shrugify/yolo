@@ -18,3 +18,6 @@
 /.phpunit.cache
 /.phpunit.result.cache
 ###< phpunit/phpunit ###
+
+/.phive
+/tools
