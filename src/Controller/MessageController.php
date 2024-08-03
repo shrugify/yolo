@@ -40,10 +40,14 @@ final readonly class MessageController
     #[Route(path: '/message.txt')]
     public function __invoke(): Response
     {
-        return JsonResponse::fromJsonString(
+        $response = JsonResponse::fromJsonString(
             $this->messageRepository->getRandomMessageBySource(
                 MessageSource::Mixed,
             ),
         );
+
+        $response->headers->set('Content-Type', 'text/plain');
+
+        return $response;
     }
 }
