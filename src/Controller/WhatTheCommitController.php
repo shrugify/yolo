@@ -39,10 +39,14 @@ final readonly class WhatTheCommitController
     #[Route(path: '/whatthecommit.txt')]
     public function __invoke(): Response
     {
-        return JsonResponse::fromJsonString(
+        $response = JsonResponse::fromJsonString(
             $this->messageRepository->getRandomMessageBySource(
                 MessageSource::WhatTheCommit,
             ),
         );
+
+        $response->headers->set('Content-Type', 'text/plain');
+
+        return $response;
     }
 }
